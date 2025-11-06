@@ -1,0 +1,190 @@
+/* RESET Y VARIABLES */
+:root{
+    --bg: #ffffff;
+    --primary: #f2a365;
+    --accent: #2b2b2b;
+    --muted: #9fa8a8;
+    --radius: 10px;
+    --max-width: 1100px;
+    --gap: 16px;
+}
+
+*{box-sizing: border-box; margin: 0; padding: 0;}
+body{
+    font-family: "Arial", sans-serif;
+    background: var(--bg);
+    color: var(--accent);
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* CONTENEDOR CENTRAL */
+.container{
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* HEADER */
+.site-header{
+    background: linear-gradient(90deg, #fff6f1, #fff);
+    padding: 18px 0 8px 0;
+    border-bottom: 1px solid #eee;
+}
+.header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.brand{
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+.slogan{
+    text-align: center;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+/* NAVEGACIÓN */
+.main-nav a{
+    margin-left: 12px; /*Separa los botones entre si*/
+    text-decoration: none; /*Elimina el subrayado de los enlaces*/
+    color: var(--accent); /*define el color del texto (se toma de la variable en :root*/
+    padding: 8px 10px; /*Da espacio interno para que aparezca un botón)*/
+    border-radius: 8px; /*Redondea las esquinas*/
+}
+.main-nav a:hover{
+    background: var(--primary);
+    color: #fff; /*se aplica un fondo color durazno (--primary) cuando pasas el cursor.*/
+}
+
+/* HERO / INICIO */
+.hero{
+    text-align: center;
+    padding: 28px 0 40px 0;
+}
+.hero-img{
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 14px;
+}
+.lead{
+    font-size: 18px;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+}
+
+/* GRID DE PRODUCTOS */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+    margin: 18px 0 40px 0;
+}
+.caja{
+    background-color: #9fb0b0;
+    border-radius: var(--radius);
+    padding: 12px;
+    text-align: center;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.caja img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 10px;
+}
+.caja h3{
+    font-size: 16px;
+}
+
+/* efecto hover */
+.caja:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* CONTACTOS */
+.contactos{
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+.contacto-card{
+    background: #f7f7f7;
+    padding: 12px;
+    border-radius: 8px;
+    width: 260px;
+    text-align: center;
+}
+.contacto-card img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+.nombre{
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* MAPA RESPONSIVO */
+.map-responsive{
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 */
+    border-radius: 8px;
+    margin: 12px 0;
+}
+.map-responsive iframe{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* FOOTER */
+.site-footer{
+    border-top: 1px solid #eee;
+    padding: 14px 0;
+    margin-top: 30px;
+}
+.footer-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+.site-footer a{
+    text-decoration: none;
+    color: var(--accent);
+}
+
+/* TIPOGRAFÍA Y RESPONSIVE */
+h1{ font-size: 26px; }
+h2{ font-size: 22px; margin: 12px 0; }
+h3{ font-size: 18px; margin: 6px 0; }
+
+@media (max-width: 600px){
+    .header-inner{ flex-direction: column; gap: 10px; align-items: flex-start; }
+    .footer-inner{ flex-direction: column; text-align: center; }
+    .contacto-card{ width: 100%; }
+    .hero-img{ max-height: 220px; }
+}
